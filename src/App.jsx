@@ -4,11 +4,13 @@ import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-      </Routes>
-    </HashRouter>
+    // <HashRouter>
+    //   <Routes>
+    //     <Route path="/" element={<HomePage />}></Route>
+    //   </Routes>
+    // </HashRouter>
+
+    <p>hello</p>
   )
 }
 
