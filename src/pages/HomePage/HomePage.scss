@@ -1,0 +1,526 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(20, 20, 19);
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 2rem;
+  background-color: black;
+  
+
+  @include tablet {
+    width: 100%;
+    height: 103.5vh;
+  }
+
+  @include desktop {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(-10rem);
+  animation: comeIn 2s ease-out forwards;
+  margin-top: 4rem;
+
+  @include desktop {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  &__name {
+    font-size: 3rem;
+    color: white;
+    font-family: bold;
+
+    @include desktop {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__job {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: -0.6rem;
+    font-family: bold;
+
+    @include desktop {
+      margin-bottom:-3rem;
+    }
+  }
+
+  &__link {
+    margin-top: 2rem;
+    color: rgb(255, 253, 253);
+    font-size: 1.2rem;
+    font-family: bold;
+    transition: 0.3s ease-in-out;
+    animation: comeIn 3s ease-out forwards;
+    padding-bottom: 3rem;
+    padding-top:0;
+
+    &:hover {
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    @include desktop {
+      padding: 0;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.splineContainer {
+  width: 38rem;
+  max-width: 38rem;
+  height: 38rem;
+  max-height: 38rem;
+  border-radius: 600rem;
+  overflow: hidden;
+  transform: translateY(-10rem);
+  animation: comeIn 3s ease-out forwards;
+  transform: scale(0.5);
+
+  @include desktop {
+    width: 40rem;
+    max-width: 40rem;
+    height: 40rem;
+    max-height: 40rem;
+  }
+}
+
+@keyframes comeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about {
+  background-color: black;
+  margin: 2.5rem;
+  padding: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @include desktop {
+      width: 50%;
+      align-items: flex-start;
+    }
+  }
+
+  &__info {
+    @include desktop {
+        text-align: start;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: rgb(227, 43, 178);
+    position: relative;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    font-family: bold;
+    text-align: center;
+
+    @include desktop {
+      text-align: start;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 0.1rem;
+      background-color: rgb(227, 43, 178);
+      transition: width 0.5s ease-in-out;
+
+      @include desktop {
+        background-color: black;
+      }
+    }
+
+    &:hover::after {
+      width: 100%;
+
+      @include desktop {
+        width: 90%;
+      }
+    }
+  }
+
+  &__imageContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+
+    @include tablet {
+        justify-content: center;
+    }
+
+    @include desktop {
+    justify-content: flex-end;
+      width: 40%;
+    }
+
+    @include largerDesktop {
+       padding-right: 2rem;
+      }
+
+    &__image {
+      width: 100%;
+      border-radius: 50%;
+
+      @include tablet {
+        align-items: center;
+        max-width: 90%;
+      }
+
+      @include desktop {
+        max-width: 80%;
+      }
+
+      @include largerDesktop {
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+.techStack {
+  margin: 0.1rem 2.5rem;
+  padding: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.7rem;
+
+  &__title {
+    font-size: 1.5rem;
+    color: rgb(227, 43, 178);
+    position: relative;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    font-family: bold;
+    text-align: center;
+
+    @include desktop {
+      text-align: start;
+      width: 16.5%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 0.1rem;
+      background-color: rgb(227, 43, 178);
+      transition: width 0.5s ease-in-out;
+
+      @include desktop {
+        background-color: black;
+      }
+    }
+
+    &:hover::after {
+      width: 100%;
+
+      @include desktop {
+        width: 90%;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+
+    @include tablet {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 0.5rem;
+    }
+  }
+
+  &__item {
+    background-color: black;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    font-family: bold;
+    border-radius: 1.5rem;
+    border-color: rgb(126, 123, 123);
+    border-width: 0.5px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+
+    @include tablet {
+        font-size: 0.9rem;
+    }
+
+    @include desktop {
+        font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: rgb(14, 15, 79);
+      border-color: rgb(14, 15, 79);
+      color: white;
+    }
+  }
+}
+
+.projects {
+  margin: 0.1rem 2.5rem;
+  padding: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include desktop {
+    justify-content: center;
+    align-items: start;
+  }
+
+
+  &__title {
+    font-size: 1.5rem;
+    color: rgb(227, 43, 178);
+    position: relative;
+    margin-bottom: -1rem;
+    width: 100%;
+    font-family: bold;
+    text-align: center;
+
+    @include desktop {
+      text-align: start;
+      width: 12.5%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 0.1rem;
+      background-color: rgb(227, 43, 178);
+      transition: width 0.5s ease-in-out;
+
+      @include desktop {
+        background-color: black;
+      }
+    }
+
+    &:hover::after {
+      width: 100%;
+
+      @include desktop {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.projectsBigContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding:0;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  border-bottom: 1px solid white;
+
+  @include desktop {
+    flex-direction: row;
+    padding:1rem;
+    border:none;
+  }
+
+  &__link {
+    cursor: pointer;
+    color: white;
+
+    &:hover {
+      background-color: rgb(14, 15, 79);
+      border-radius: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+
+    @include desktop {
+        text-align: start;
+        align-items: start;
+        width: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-family: bold;
+    color: white;
+
+    @include tablet {
+        font-size: 1.3rem;
+    }
+
+  }
+
+  &__description {
+    color: rgb(192, 186, 186);
+    font-size: 0.9rem;
+
+
+    @include tablet {
+        font-size: 0.8rem;
+    }
+  }
+
+  &__summary {
+    margin-top: 3em;
+    font-size: 1rem;
+    color: white;
+
+
+    @include tablet {
+        font-size: 0.9rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    @include desktop {
+        width: 50%;
+        align-items: center;
+        margin-bottom: 0rem;
+    }
+
+    &__container {
+      width: 100%;
+      padding:1rem;
+
+    }
+  }
+
+  &__pic {
+    width: 100%;
+  }
+}
+
+.footerContainer {
+  padding: 5rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 2rem;
+    font-family: bold;
+  }
+}
+
+.about,
+.techStack, 
+.projects {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
