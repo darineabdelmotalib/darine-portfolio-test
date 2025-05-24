@@ -1,9 +1,15 @@
+import './App.scss'
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import HomePage from "./pages/HomePage/HomePage";
+
 function App() {
   return (
-    <div style={{ padding: "2rem", fontSize: "2rem" }}>
-      ✅ This is the test project.
-    </div>
-  );
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+      </Routes>
+    </HashRouter>
+  )
 }
 
 export default App;
